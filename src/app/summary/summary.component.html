@@ -1,0 +1,34 @@
+<hgroup>
+  <h1>Summary</h1>
+  <p class="subtitle">Your Tesla {{ modelDescription }}</p>
+</hgroup>
+<table>
+  <tbody>
+    <tr>
+      <th>{{ configDetail.description }}</th>
+      <td>{{ configDetail.price | currency:'USD' }}</td>
+    </tr>
+    <tr>
+      <td>Range: {{ configDetail.range }} mi - Top Speed: {{ configDetail.speed }} mph</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>{{ color.description }}</th>
+      <td>{{ color.price | currency:'USD' }}</td>
+    </tr>
+    <tr *ngIf="towHitch">
+      <th>Tow Hitch Package</th>
+      <td>{{ OPTION_PRICE | currency:'USD' }}</td>
+    </tr>
+    <tr *ngIf="yoke">
+      <th>Yoke Steering Wheel</th>
+      <td>{{ OPTION_PRICE | currency:'USD' }}</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th class="footer-cell">Total Cost</th>
+      <td class="footer-cell">{{ totalCost | currency:'USD' }}</td>
+    </tr>
+  </tfoot>
+</table>

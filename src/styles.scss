@@ -1,0 +1,23 @@
+@use 'style/reset';
+@use 'style/material';
+
+body {
+  padding: 96px 48px;
+  min-width: fit-content;
+  background-color: #fff;
+
+  // Typography
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  color: #171a20;
+
+  // Center content horizontally
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  margin: 0.5em 0;
+
+  // Typography
+  font-weight: 500;
+}

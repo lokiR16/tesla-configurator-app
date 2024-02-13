@@ -1,0 +1,16 @@
+:host {
+  display: block;
+}
+
+.links {
+  width: 100%;
+  display: flex;
+
+  >li {
+    flex: 1; // Distribute space evenly
+  }
+
+  a {
+    text-transform: uppercase;
+  }
+}

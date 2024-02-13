@@ -1,0 +1,4 @@
+<img *ngIf="isModelSelected; else placeholder" [src]="src" [alt]="alt">
+<ng-template #placeholder>
+  <app-tesla-logo-svg />
+</ng-template>

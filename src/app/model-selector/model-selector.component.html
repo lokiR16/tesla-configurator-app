@@ -1,0 +1,20 @@
+<h1>Choose your Model and Color</h1>
+<div class="controls">
+  <mat-form-field>
+    <mat-label>Model</mat-label>
+    <mat-select id="modelSelect" name="model" [(ngModel)]="modelCode">
+      <mat-option value selected>Choose...</mat-option>
+      <mat-option *ngFor="let model of models" [value]="model.code">
+        {{ model.description }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field *ngIf="modelCode">
+    <mat-label>Color</mat-label>
+    <mat-select id="colorSelect" name="color" [(ngModel)]="colorCode">
+      <mat-option *ngFor="let color of colors" [value]="color.code">
+        {{ color.description }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

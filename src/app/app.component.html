@@ -1,0 +1,13 @@
+<nav mat-tab-nav-bar [tabPanel]="tabPanel">
+  <ol class="links">
+    <li *ngFor="let route of routes; let i = index">
+      <a mat-tab-link [id]="'step' + i + 1" [routerLink]="route" (click)="activeRoute = i"
+          [active]="activeRoute === i" [disabled]="isDisabled(route)">
+        Step {{ i + 1 }}
+      </a>
+    </li>
+  </ol>
+</nav>
+<router-outlet />
+<app-model-viewer />
+<mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>

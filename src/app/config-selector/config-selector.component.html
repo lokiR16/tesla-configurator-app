@@ -1,0 +1,27 @@
+<h1>Select your Config and Options</h1>
+<div class="controls">
+  <mat-form-field>
+    <mat-label>Config</mat-label>
+    <mat-select id="configSelect" [(ngModel)]="configId" name="config">
+      <mat-option [value]="0">Choose...</mat-option>
+      <ng-container *ngIf="options">
+        <mat-option *ngFor="let config of options.configs" [value]="config.id">
+          {{ config.description }}
+        </mat-option>
+      </ng-container>
+    </mat-select>
+  </mat-form-field>
+  <ng-container *ngIf="options">
+    <div class="config-info" *ngIf="configId">
+      <p><span>Range</span><span>{{ config.range }} mi</span></p>
+      <p><span>Max Speed</span><span>{{ config.speed }} mph</span></p>
+      <p><span>Cost</span><span>{{ config.price | currency:'USD' }}</span></p>
+    </div>
+    <mat-checkbox *ngIf="options.towHitch" id="includeTow" [(ngModel)]="towHitch" name="towHitch">
+      Tow Hitch ?
+    </mat-checkbox>
+    <mat-checkbox *ngIf="options.yoke" id="includeYoke" [(ngModel)]="yoke" name="yoke">
+      Yoke Steering Wheel ?
+    </mat-checkbox>
+  </ng-container>
+</div>
