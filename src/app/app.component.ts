@@ -21,7 +21,7 @@ import { ConfigService } from './config.service';
 export class AppComponent {
   activeRoute = 0;
   readonly routes = [
-    '/model',
+    '/model-selection',
     '/select-configuration',
     '/summary',
   ];

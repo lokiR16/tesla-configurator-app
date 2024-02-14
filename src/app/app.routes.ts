@@ -7,8 +7,8 @@ import { ModelService } from './model.service';
 import { ConfigService } from './config.service';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'model', pathMatch: 'full' },
-  { path: 'model', component: ModelSelectorComponent },
+  { path: '', redirectTo: 'model-selection', pathMatch: 'full' },
+  { path: 'model-selection', component: ModelSelectorComponent },
   {
     path: 'select-configuration',
     component: ConfigSelectorComponent,
@@ -19,5 +19,5 @@ export const routes: Routes = [
     component: SummaryComponent,
     canActivate: [() => inject(ConfigService).configId > 0]
   },
-  { path: '**', redirectTo: 'model' }
+  { path: '**', redirectTo: 'model-selection' }
 ];
