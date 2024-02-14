@@ -1,4 +1,4 @@
-<nav mat-tab-nav-bar [tabPanel]="tabPanel">
+<nav mat-tab-nav-bar [tabPanel]="tabPanel" class="background">
   <ol class="links">
     <li *ngFor="let route of routes; let i = index">
       <a mat-tab-link [id]="'step' + i + 1" [routerLink]="route" (click)="activeRoute = i"

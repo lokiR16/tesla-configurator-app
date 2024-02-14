@@ -19,5 +19,5 @@ export const routes: Routes = [
     component: SummaryComponent,
     canActivate: [() => inject(ConfigService).configId > 0]
   },
-  { path: '**', redirectTo: 'smodel' }
+  { path: '**', redirectTo: 'model' }
 ];

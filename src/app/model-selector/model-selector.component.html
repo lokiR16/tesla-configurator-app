@@ -9,7 +9,7 @@
       </mat-option>
     </mat-select>
   </mat-form-field>
-  <mat-form-field *ngIf="modelCode">
+  <mat-form-field *ngIf="modelCodeData">
     <mat-label>Color</mat-label>
     <mat-select id="colorSelect" name="color" [(ngModel)]="colorCode">
       <mat-option *ngFor="let color of colors" [value]="color.code">

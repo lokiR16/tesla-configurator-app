@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ModelConfig } from '../../types/model';
 import { ModelService } from '../model.service';
 import { CommonModule } from '@angular/common';
@@ -19,14 +19,12 @@ import { MatSelectModule } from '@angular/material/select';
   templateUrl: './model-selector.component.html',
   styleUrl: './model-selector.component.scss'
 })
-export class ModelSelectorComponent implements OnInit {
-  modelCodeData: string = '';
+export class ModelSelectorComponent {
+  modelCodeData: string ;
   
 
-  constructor(private modelConfigService: ModelService) {}
-
-  ngOnInit(): void {
-    this.modelCodeData= this.modelConfigService.modelCodeSubject$.value;
+  constructor(private modelConfigService: ModelService) {
+    this.modelCodeData = this.modelConfigService.modelCodeSubject$.value;
   }
 
   get models(): ModelConfig[] {
@@ -37,7 +35,7 @@ export class ModelSelectorComponent implements OnInit {
     return this.modelConfigService.colors;
   }
 
-  get modelData(): string {
+  get modelCode(): string {
     return this.modelCodeData;
   }
 
@@ -53,4 +51,4 @@ export class ModelSelectorComponent implements OnInit {
   set colorCode(value: string) {
     this.modelConfigService.colorCode = value;
   }
-}
+} 
